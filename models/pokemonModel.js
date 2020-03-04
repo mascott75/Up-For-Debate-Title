@@ -1,6 +1,6 @@
 var orm = require("../configs/orm");
 
-var pokemon = {
+var Pokemon = {
   all: function(cb) {
     orm.all("pokemon", function(res) {
       cb(res);
