@@ -5,7 +5,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var pokemon = require("../models/pokemonModel.js");
+var pokemon = require("../configs/pokemonModel.js");
 var generate = require("../models/generated_pokemon");
 
 // Create all our routes and set up logic within those routes where required.
@@ -22,7 +22,7 @@ router.get("/", function (req, res) {
 router.get("/generate", function (req, res) {
     generate.all(function() {
         var generate = {
-            generated = data
+            generated: data
         }
         console.log(generate);
         res.render("?", generate);
