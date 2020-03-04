@@ -1,0 +1,11 @@
+ [class^=col]{     border:dotted red; } 
+ [class^=row]{    border:dashed green ;} 
+  #nav{       border:solid black;}  
+ [class^="container"]{     border:dotted black;   } 
+ #name{    padding: 15px 16px 15px 16px;    background-color: #eeeeee;} 
+.row{}
+ 
+ [class^=col-md]{ 
+      border:dotted red;  
+
+ } 
