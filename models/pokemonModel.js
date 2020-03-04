@@ -7,6 +7,12 @@ var Pokemon = {
     });
   },
 
+  select: function(table, tabColVal, condition, cb) {
+    orm.select("pokemon", table, tabColVal, condition, function(res){
+      cb(res);
+    });
+  },
+
   create: function(cols, vals, cb) {
     orm.create("pokemon", cols, vals, function(res) {
       cb(res);
