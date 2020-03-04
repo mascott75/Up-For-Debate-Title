@@ -4,3 +4,5 @@
 js_
 function(): get, put, post, delete
 populate pull down,
+start, pause, stop,
+switch to generate html, 

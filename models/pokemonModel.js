@@ -26,4 +26,4 @@ var Pokemon = {
   }
 };
 
-module.exports = pokemon;
+module.exports = Pokemon;
