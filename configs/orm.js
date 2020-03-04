@@ -30,6 +30,19 @@ var orm = {
     });
   },
 
+  select: function(table, tabColVal, condition, cb) {
+    var queryString = "SELECT " + tabColVal + " FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    })
+  },
+
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
     queryString += " (";
