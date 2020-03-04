@@ -23,7 +23,6 @@ CREATE TABLE generated_pokemon
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
 	type varchar(30) NOT NULL,
-	natureID INTEGER(10) NULL,
     hp INTEGER(3) NOT NULL,
     attack INTEGER(3) NOT NULL, 
     defense INTEGER(3) NOT NULL,
