@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang='en'>
 
 <head>
@@ -47,37 +47,81 @@
 <body>
     <div class="container">
         <div class="columns">
-            {{{pokeOne}}}
-            
-            <div class="column">
-            {{{pokeTwo}}}
-         </div>
-    <div class="container"> 
-        <div class="columns"> 
-            {{{buttonOne}}} 
+            <div id="pokeOneSelect" class="column has-text-centered">
+                <div class="field">
+                    <div class="control">
+                        <div id="selectOne" class="selectOne is-primary">
+                            <select>
+                                <option>Select dropdown</option>
+                                <option>With options</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- First column -->
+                <!-- this is the diplay for poke 1 -->
 
-        </div> 
-        <!-- <textarea class="textarea" placeholder="e.g. Hello world"></textarea>       -->
+                <h2 id="pokeNameOne" class="pokeNameOne">Pokemon Name</h2>
+                <img id="imgPokeOne" class="imgPokeOne" src="http://placehold.it/320x320">
+                <ul style="list-style: none;">
+                    <li id="liHpOne" class="liHpOne">HP:</li>
+                    <li id="liAttOne" class="liAttOne">Attack:</li>
+                    <li id="liDefOne" class="liDefOne">Defense:</li>
+                    <li id="liSpOne" class="liSpOne">Speed:</li>
+                </ul>
+            </div>
+            <div id="pokeTwoSelect" class="column has-text-centered">
+                <div class="field">
+                    <div class="control">
+                        <div id="selectTwo" class="selectTwo is-primary">
+                            <select>
+                                <option>Select dropdown</option>
+                                <option>With options</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- First column -->
+                <!-- this is the diplay for poke 1 -->
+
+                <h2 id="pokeNameTwo" class="pokeNameTwo">Pokemon Name</h2>
+                <img id="imgPokeTwo" class="imgPokeTwo" src="http://placehold.it/320x320">
+                <ul style="list-style: none;">
+                    <li id="liHpTwo" class="liHpTwo">HP:</li>
+                    <li id="liAttTwo" class="liAttTwo">Attack:</li>
+                    <li id="liDefTwo" class="liDefTwo">Defense:</li>
+                    <li id="liSpTwo" class="liSpTwo">Speed:</li>
+                </ul>
+            </div>
+        </div>
+        
+                <div class="buttons are-large is-centered">
+                    <button id="btn1" class="button">buttonTwoName</button>
+                    <button id="btn2" class="button">buttonTwoName</button>
+                    <button id="btn3" class="button">buttonThreeName</button>
+                </div>
+            
+            <!-- <textarea class="textarea" placeholder="e.g. Hello world"></textarea>       -->
+        </div>
+        <br>
+        <span class="is-size-5">
+            <!-- Primary Textarea  -->
+        </span>
+        <div class="field">
+            <div class="control">
+                <textarea class="textarea is-primary" type="text" placeholder="Enter your input"></textarea>
+            </div>
+        </div>
+        <br>
     </div>
-    <br>
-   <span class = "is-size-5">
-       <!-- Primary Textarea  -->
-    </span>
-    <div class = "field">
-       <div class = "control">
-            <textarea class = "textarea is-primary" type = "text" placeholder = "Enter your input"></textarea>
-       </div>
-    </div>
-    <br>
-    </div>    
- 
+
 
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'
         integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous'></script>
     <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'
         integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo'
         crossorigin='anonymous'></script>
-   
+
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src='script.js'></script>
 </body>
