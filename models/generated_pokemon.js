@@ -1,6 +1,6 @@
 // Creating our Generated Pokemon model
 module.exports = function(sequelize, DataTypes) {
-  var Generated = sequelize.define("generated_pokemon", {
+  var Generated = sequelize.define("Generated", {
     name: {
       type: DataTypes.STRING,
       allowNull: false

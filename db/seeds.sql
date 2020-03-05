@@ -1,1 +1,1 @@
-insert into natures(name, increase, decrease) values ("Lonely", "attack", "defense"), ("Bold", "Defense", "attack"), ("Relaxed", "Defense", "Speed"),("Timid", "Speed", "attack"), ("Hasty", "Speed", "Defense");
+insert into natures(name, increase, decrease) values ("Lonely", "attack", "defense"), ("Bold", "Defense", "attack"), ("Relaxed", "Defense", "Speed"),("Timid", "Speed", "attack"), ("Hasty", "Speed", "Defense"); 
