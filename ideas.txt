@@ -1,2 +1,8 @@
 1. create an app feature that generates a random fighter with random stats, and adds it to the table (also assigns a random nature/attribute). 
 2. create tables that hold base values of some pokemon, and another table that has the natures/attributes for them. 
+
+js_
+function(): get, put, post, delete
+populate pull down,
+start, pause, stop,
+switch to generate html, 
