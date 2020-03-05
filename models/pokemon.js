@@ -1,6 +1,6 @@
 // Creating our Pokemon model
 module.exports = function(sequelize, DataTypes) {
-  var Pokemon = sequelize.define("pokemon", {
+  var pokemon = sequelize.define("pokemon", {
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -26,5 +26,5 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  return Pokemon;
+  return pokemon;
 };
