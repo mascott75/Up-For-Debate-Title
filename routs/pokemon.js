@@ -11,6 +11,7 @@ var router = express.Router();
 // Create all our routes and set up logic within those routes where required.
 router.get("/api/pokemon", function(req, res) {
   db.pokemon.findAll({ attributes: ["name"] }).then(function(dbPokemon) {
+    console.log(dbPokemon);
     res.send(dbPokemon);
   });
 });
@@ -30,6 +31,7 @@ router.get("/api/pokemon/:name", function(req, res) {
       }
     })
     .then(function(dbPost) {
+      console.log(dbPost);
       res.send(dbPost);
     });
 });
