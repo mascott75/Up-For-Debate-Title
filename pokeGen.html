@@ -36,18 +36,7 @@
         </div>
       </div>
     </nav>
-    <script type="text/javascript">
-      (function() {
-        var burger = document.querySelector(".burger");
-        var nav = document.querySelector("#" + burger.dataset.target);
-        burger.addEventListener(`click`, function() {
-          burger.classList.toggle(`is-active`);
-          nav.classList.toggle(`is-active`);
-        });
-      })();
-    </script>
   </header>
-
   <body>
     <div class="container is-centered">
       <div class="column">
@@ -57,24 +46,23 @@
             <div class="control">
               <div class="select is-primary">
                 <select>
-                  <option>Select dropdown</option>
-                  <option>With options</option>
+                  <option placeholder>butterfree</option>
                 </select>
               </div>
             </div>
           </div>
           <!-- this is the diplay for generated Pokemon -->
-          <h2 id="genPokeName" class="genPokeName"></h2>
+          <input class="input" type="pokeName" placeholder="Pokemon Name">          
           <img
             id="imgPokeGen"
             class="imgPokeGen"
-            src= "https://bulma.io/images/placeholders/480x480.png"
+            src= ""
           />
           <ul style="list-style:n;">
-            <li id="liHpGen" class="liHpGen">HP:</li>
-            <li id="liAttGen" class="liAttGen">Attack:</li>
-            <li id="liDefGen" class="liDefGen">Defense:</li>
-            <li id="liSpGen" class="liSpGen">Speed:</li>
+            <li id="hpGen" class="hpGen">HP:</li>
+            <li id="attGen" class="attGen">Attack:</li>
+            <li id="defGen" class="defGen">Defense:</li>
+            <li id="spGen" class="spGen">Speed:</li>
           </ul>
         </div>
       </div>
@@ -100,6 +88,7 @@
       defer
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
+    <script src = "./public/js/Generate/generate.js"></script>
     <!-- <script src='script.js'></script> -->
   </body>
 </html>
