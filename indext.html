@@ -50,8 +50,8 @@
             <div id="pokeOneSelect" class="column has-text-centered">
                 <div class="field">
                     <div class="control">
-                        <div id="selectOne" class="selectOne is-primary">
-                            <select>
+                        <div  class="selectOne is-primary">
+                            <select id="selectOne">
                                 <option>Select dropdown</option>
                                 <option>With options</option>
                             </select>
@@ -73,8 +73,8 @@
             <div id="pokeTwoSelect" class="column has-text-centered">
                 <div class="field">
                     <div class="control">
-                        <div id="selectTwo" class="selectTwo is-primary">
-                            <select>
+                        <div  class="selectTwo is-primary">
+                            <select id="selectTwo">
                                 <option>Select dropdown</option>
                                 <option>With options</option>
                             </select>
@@ -109,7 +109,7 @@
         </span>
         <div class="field">
             <div class="control">
-                <textarea class="textarea is-primary" type="text" placeholder="Enter your input"></textarea>
+                <textarea id="textarea" class="textarea is-primary" type="text" placeholder="Enter your input"></textarea>
             </div>
         </div>
         <br>
@@ -123,7 +123,10 @@
         crossorigin='anonymous'></script>
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src='./public/js/battle/pokemon.js'></script>
+    <script src='./public/js/Generate/generate.js'></script>
     <script src='script.js'></script>
+    <script> pokemonFight()</script>
 </body>
 
 </html>
