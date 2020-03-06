@@ -5,7 +5,7 @@ CREATE TABLE natures(
     decrease varchar(100) not null, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE pokemon
+CREATE TABLE pokemons
 (
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE pokemon
 	-- stats end
 	PRIMARY KEY (id)
 );
-CREATE TABLE generated_pokemon
+CREATE TABLE generated_pokemons
 (
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
