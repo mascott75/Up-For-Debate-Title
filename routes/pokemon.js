@@ -34,6 +34,7 @@ router.get("/api/pokemon/:name", function(req, res) {
     });
 });
 
+//
 router.get("/api/generated/:name", function(req, res) {
   db.generated_pokemon
     .findOne({
@@ -47,27 +48,51 @@ router.get("/api/generated/:name", function(req, res) {
     });
 });
 
-router.post("/api/posts", function(req, res) {
+//post generated pokemon
+router.post("/api/generate", function(req, res) {
   console.log(req.body);
   db.Generated.create({
     name: req.body.name,
-    type: req.body.type,
-    hp: req.body.hp,
-    attack: req.body.attack,
-    defense: req.body.defense,
-    speed: req.body.speed
+    type: getRandomType(),
+    hp: Math.floor(Math.random() * 180),
+    attack: Math.floor(Math.random() * 180),
+    defense: Math.floor(Math.random() * 180),
+    speed: Math.floor(Math.random() * 180)
   }).then(function(dbPost) {
-    res.json(dbPost);
+    res.send(dbPost);
   });
 });
 
-router.delete("/api/generated/:id", function(req, res) {
+function getRandomType() {
+  var type;
+  var randomNum = Math.floor(Math.random() * 4);
+  switch (randomNum) {
+    case 0:
+      type = "water";
+      break;
+    case 1:
+      type = "fire";
+      break;
+    case 2:
+      type = "grass";
+      break;
+    case 3:
+      type = "dragon";
+      break;
+    default:
+      type = "water";
+      break;
+  }
+  return type;
+}
+
+router.delete("/api/generate/:id", function(req, res) {
   db.Generated.destroy({
     where: {
       id: req.params.id
     }
   }).then(function(dbPost) {
-    res.send(dbPost);
+    res.json(dbPost);
   });
 });
 
