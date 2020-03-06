@@ -21,8 +21,8 @@ $("#find-pokemon").on("click", function(event) {
     var imgPokeOne = response.data.sprite.front_default;
     $("#imgPokeOne").attr("src", imgPokeOne);
   });
-
-  // -----------------------------------------------------------------------
+});
+// -----------------------------------------------------------------------
 $(document).ready(function() {
   $("#btn1").on("click", function() {});
 
