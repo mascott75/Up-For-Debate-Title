@@ -1,25 +1,23 @@
-$(document).ready(function() {
-  $("#btn1").on("click", function() {});
-
-  $("#start-btn").on("click", function() {
-    // starts the battle
+$.get("/generate", function(generated) {
+  $.get("/api/pokemon", function(pokemon) {
+    pulDownPop(pokemon, generated);
   });
 });
-function pulDownPop(data, data2) {
-  console.log("im in");
-  data = ["me", "them", "him"];
-  data2 = ["ME", "THEM", "HIM"];
 
+function pulDownPop(pokemon, generated) {
+  console.log("im in");
+  console.log(pokemon);
+  console.log(generated);
   var nameTag = "<option value='0'>Select</option>";
 
-  for (i = 0; i < data.length; i++) {
-    nameTag += "<option value='U'>" + data[index] + "</option>";
+  for (j = 0; j < generated.length; j++) {
+    nameTag += "<option value='P'>" + generated[j].name + "</option>";
   }
-  for (index = 0; index < data2.length; index++) {
-    nameTag += "<option value='P'>" + data2[index] + "</option>";
+  for (i = 0; i < pokemon.length; i++) {
+    nameTag += "<option value='U'>" + pokemon[i].name + "</option>";
   }
-  document.getElementById("selectOne").innerHTML = nameTag;
-  document.getElementById("selectTwo").innerHTML = nameTag;
+  $("#selectTwo").append($(nameTag));
+  $("#selectOne").append($(nameTag));
   // document.getElementById("selectGen").innerHTML = nameTag;
 }
 
@@ -56,98 +54,4 @@ function pokemonDisplay(pokemanStatDisplay) {
   document.getElementById("liDef" + pokemanStatDisplay).textContent =
     "new text";
   document.getElementById("liSp" + pokemanStatDisplay).textContent = "new text";
-}
-function pokemonFight(pokemon1, pokemon2) {
-  do {
-    roundNum = roundNum + 1;
-    console.log("round # " + roundNum);
-    document.getElementById("textarea").textContent = "round # " + roundNum;
-
-    if (p2speed < p1speed) {
-      if (p1Hp >= 1) {
-        damage = p1Att - p2def;
-        if (damage < 1) {
-          damage = 0;
-        }
-        p2Hp -= damage;
-        console.log(
-          pName1 + " attacks " + pName2 + " for " + damage + " points of damage"
-        );
-        console.log(pName2 + " has " + p2Hp + " left");
-        document.getElementById("textarea").textContent =
-          pName1 +
-          " attacks " +
-          pName2 +
-          " for " +
-          damage +
-          " points of damage";
-        document.getElementById("textarea").textContent =
-          pName2 + " has " + p2Hp + " left";
-      }
-      if (p2Hp >= 1) {
-        damage = p2Att - p1def;
-        if (damage < 1) {
-          damage = 0;
-        }
-        p1Hp -= damage;
-        console.log(
-          pName2 + " attacks " + pName1 + " for " + damage + " points of damage"
-        );
-        console.log(pName1 + " has " + p1Hp + " left");
-        document.getElementById("textarea").textContent =
-          " attacks " + pName1 + " for " + damage + " points of damage";
-        document.getElementById("textarea").textContent =
-          pName1 + " has " + p1Hp + " left";
-      }
-    } else {
-      if (p2Hp >= 1) {
-        damage = p2Att - p1def;
-        if (damage < 1) {
-          damage = 0;
-        }
-        p1Hp -= damage;
-        console.log(
-          pName2 + " attacks " + pName1 + " for " + damage + " points of damage"
-        );
-        console.log(pName1 + " has " + p1Hp + " left");
-        document.getElementById("textarea").textContent =
-          " attacks " + pName1 + " for " + damage + " points of damage";
-        document.getElementById("textarea").textContent =
-          pName1 + " has " + p1Hp + " left";
-      }
-
-      if (p1Hp >= 1) {
-        damage = p1Att - p2def;
-        if (damage < 1) {
-          damage = 0;
-        }
-        p2Hp -= damage;
-        console.log(
-          pName1 + " attacks " + pName2 + " for " + damage + " points of damage"
-        );
-        console.log(pName2 + " has " + p2Hp + " left");
-        document.getElementById("textarea").textContent =
-          pName1 +
-          " attacks " +
-          pName2 +
-          " for " +
-          damage +
-          " points of damage";
-        document.getElementById("textarea").textContent =
-          pName2 + " has " + p2Hp + " left";
-      }
-    }
-    if (p2Hp <= 0) {
-      console.log(pName2 + " has lost to  " + pName1);
-      document.getElementById("textarea").textContent =
-        pName2 + " has lost to  " + pName1;
-      PMfight = false;
-    }
-    if (p1Hp <= 0) {
-      console.log(pName1 + " has lost to  " + pName2);
-      document.getElementById("textarea").textContent =
-        pName1 + " has lost to  " + pName2;
-      PMfight = false;
-    }
-  } while (PMfight);
 }
