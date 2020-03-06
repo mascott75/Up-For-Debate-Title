@@ -21,25 +21,36 @@ function pulDownPop(pokemon, generated) {
   // document.getElementById("selectGen").innerHTML = nameTag;
 }
 
-$("#selectOne").on("change", function(event) {
+$("#selectOne").on("change",populatePokemonSide);
+$("#selectTwo").on("change",populatePokemonSide);
+
+function populatePokemonSide(event) {
+
+  console.log(this);
   // CCflag = true;
-  var pokemonName = $("#selectOne :selected").text();
-  var pokemonTable = $("#selectOne :selected").val();
-  var pokemonNameLenght = pokemonName.length;
+  var pokemonName = $(`#${this.id} :selected`).text();
+  var pokemonTable = $(`#${this.id} :selected`).val();
+  var pokemonNameLength = pokemonName.length;
   if (pokemonTable === "P") {
     /*place call to populate*/
     console.log("is a P");
-    console.log("im selectVal=" + pokemonName);
+    console.log("name!!! " + pokemonName);
     console.log("im selectVal2=" + pokemonTable);
-    console.log("im selectVal=" + pokemonNameLenght);
+    console.log("im selectVal=" + pokemonNameLength);
+    $.get("/api/generated/" + pokemonName, function(res){
+      console.log(res)
+    });
   } else {
     /*place call to populate*/
     console.log("is a U");
-    console.log("im selectVal=" + pokemonName);
+    console.log("NAME" + pokemonName);
     console.log("im selectVal2=" + pokemonTable);
-    console.log("im selectVal=" + pokemonNameLenght);
+    console.log("im selectVal=" + pokemonNameLength);
+    $.get("/api/pokemon/" + pokemonName, function(res){
+      console.log(res)
+    });
   }
-});
+}
 
 function pokemonDisplay(pokemanStatDisplay) {
   console.log("im in");
