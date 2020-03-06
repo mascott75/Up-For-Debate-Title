@@ -25,6 +25,7 @@ function pulDownPop(data, data2) {
   document.getElementById("selectTwo").innerHTML = nameTag;
   // document.getElementById("selectGen").innerHTML = nameTag;
 }
+
 $("#selectOne").on("change", function (event) {
   // CCflag = true;
   var pokemonName = $("#selectOne :selected").text();
@@ -44,6 +45,7 @@ $("#selectOne").on("change", function (event) {
     console.log("im selectVal=" + pokemonNameLenght);
   }
 });
+
 function pokemonDisplay(pokemanStatDisplay) {
   console.log("im in");
   pokemanStatDisplay = "Two"
@@ -54,7 +56,7 @@ function pokemonDisplay(pokemanStatDisplay) {
   document.getElementById("liDef" + pokemanStatDisplay).textContent = 'new text'
   document.getElementById("liSp" + pokemanStatDisplay).textContent = 'new text'
 }
-function pokemonFight(pokemonName1, pokemonName2, pokemon1Hp, pokemon2Hp, pokemon1Att, pokemon2Att, pokemon1def, pokemon2def) {
+function pokemonFight(pokemon1, pokemon2) {
   let pName1 = "fred";
   let pName2 = "derf";
   let p1Hp = 20;
