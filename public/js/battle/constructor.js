@@ -83,4 +83,10 @@ class Character {
                   }
      
     }
+
+    // eatBerry{
+
+    // }
 }
+
+// module.exports(Character)
