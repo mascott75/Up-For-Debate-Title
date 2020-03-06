@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 // Requiring our routes
 // require("./routes/html-routes.js")(app);
-var routes = require("./routs/pokemon");
+var routes = require("./routes/pokemon");
 app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
