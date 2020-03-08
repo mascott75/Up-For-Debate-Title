@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
   port: 3306,
   user: "root",
   password: "root",
-  database: "passport_demo"
+  database: "pokemon_db"
 });
 
 connection.connect(function(err) {
