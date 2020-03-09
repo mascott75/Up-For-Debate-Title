@@ -12,6 +12,9 @@
   },
   "keywords": [],
   "author": "",
+  "engines": {
+    "node": "13.6.0"
+  },
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
