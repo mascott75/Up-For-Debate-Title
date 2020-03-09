@@ -6,7 +6,16 @@
   },
   "extends": "prettier",
   "plugins": ["prettier"],
-  "rules": {
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }},
+    "rules": {
+  
     "no-duplicate-case": "error",
     "no-empty": "error",
     "no-extra-semi": "error",
@@ -20,6 +29,7 @@
     "no-multi-spaces": "error",
     "no-unused-vars": "error",
     "camelcase": "error",
+    
     // "indent": ["error", 2],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],

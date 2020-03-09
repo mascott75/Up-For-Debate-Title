@@ -22,7 +22,7 @@ router.get("/generate", function(req, res) {
 });
 
 router.get("/api/pokemon/:name", function(req, res) {
-  console.log(req.params.name)
+  console.log(req.params.name);
   db.pokemon
     .findOne({
       attributes: ["name", "type", "hp", "attack", "defense", "speed"],
@@ -36,17 +36,15 @@ router.get("/api/pokemon/:name", function(req, res) {
 });
 
 router.get("/api/generated/:name", function(req, res) {
-  console.log(req.params)
-  db.Generated
-    .findOne({
-      attributes: ["name", "type", "hp", "attack", "defense", "speed"],
-      where: {
-        name: req.params.name
-      }
-    })
-    .then(function(dbPost) {
-      res.send(dbPost);
-    });
+  console.log(req.params);
+  db.Generated.findOne({
+    attributes: ["name", "type", "hp", "attack", "defense", "speed"],
+    where: {
+      name: req.params.name
+    }
+  }).then(function(dbPost) {
+    res.send(dbPost);
+  });
 });
 
 router.post("/api/posts", function(req, res) {
