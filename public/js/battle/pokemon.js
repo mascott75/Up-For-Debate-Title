@@ -21,24 +21,23 @@ function pulDownPop(pokemon, generated) {
   // document.getElementById("selectGen").innerHTML = nameTag;
 }
 
-$("#selectOne").on("change",populatePokemonSide);
-$("#selectTwo").on("change",populatePokemonSide);
-
-function populatePokemonSide(event) {
-
+$("#selectOne").on("change",populatePokemonSide("One"));
+$("#selectTwo").on("change",populatePokemonSide("Two"));
+function populatePokemonSide(pullID,event) {
   console.log(this);
+  console.log(pullID);
   // CCflag = true;
   var pokemonName = $(`#${this.id} :selected`).text();
   var pokemonTable = $(`#${this.id} :selected`).val();
   var pokemonNameLength = pokemonName.length;
-  if (pokemonTable === "P") {
+  if (pokemonTable === "U") {
     /*place call to populate*/
     console.log("is a P");
     console.log("name!!! " + pokemonName);
     console.log("im selectVal2=" + pokemonTable);
     console.log("im selectVal=" + pokemonNameLength);
     $.get("/api/generated/" + pokemonName, function(res){
-      console.log(res)
+      console.log("is a P="+res)
     });
   } else {
     /*place call to populate*/
@@ -47,14 +46,16 @@ function populatePokemonSide(event) {
     console.log("im selectVal2=" + pokemonTable);
     console.log("im selectVal=" + pokemonNameLength);
     $.get("/api/pokemon/" + pokemonName, function(res){
-      console.log(res)
+      console.log("is a U ="+res)
+      let displayData = res;
     });
   }
+  let displayData = res;
+  pokemonDisplay(pullID,displayData);
 }
-
-function pokemonDisplay(pokemanStatDisplay) {
+function pokemonDisplay(pokemanStatDisplay,displayData) {
   console.log("im in");
-  pokemanStatDisplay = "Two";
+  // pokemanStatDisplay = "Two";
   document.getElementById("pokeName" + pokemanStatDisplay).textContent =
     "new text";
   document.getElementById("imgPoke" + pokemanStatDisplay).src =
