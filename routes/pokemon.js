@@ -61,10 +61,10 @@ router.post("/api/posts", function(req, res) {
   });
 });
 
-router.delete("/api/generated/:id", function(req, res) {
+router.delete("/api/generated/:name", function(req, res) {
   db.Generated.destroy({
     where: {
-      id: req.params.id
+      name: req.params.name
     }
   }).then(function(dbPost) {
     res.send(dbPost);
